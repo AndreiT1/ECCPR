@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.*;
+public class andrei{
+    public static void main(String[] args){
+        Map<Integer,Integer> hmap =new HashMap<>();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        sc.nextLine();
+        String numbers=sc.nextLine();
+        String[] values=numbers.split("\\s+");
+        for(int i=0;i<n;i++){
+            int number=values[i].length();
+            if(hmap.containsKey(number)){
+                hmap.put(number,hmap.get(number)+1);
+            }else {
+                hmap.put(number,1);
+            }
+            
+            
+        }
+        for(Map.Entry<Integer,Integer> entry: hmap.entrySet()){
+                System.out.printf("%s %s\n",entry.getKey(),entry.getValue());
+            }
+      
+    }
+}
