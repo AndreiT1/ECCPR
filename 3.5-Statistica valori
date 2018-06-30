@@ -1,0 +1,93 @@
+import java.util.*;
+public class Teianu{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int m = sc.nextInt();
+        
+        int n= sc.nextInt();
+       
+        int[][] matrix=new int[m][n];
+        ArrayList<Integer> aList=new ArrayList<Integer>();
+        int zeros=0;
+        int ones=0;
+        int twos=0;
+        int threes=0;
+        int fours=0;
+        int fives=0;
+        int sixs=0;
+        int sevens=0;
+        int eights=0;
+        int nines=0;
+        int sum=0;
+        ArrayList<Double> Ha=new ArrayList<Double>();
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                matrix[i][j]=sc.nextInt();
+                sum+=matrix[i][j];
+                if (matrix[i][j]==0){
+                    zeros++;
+                }
+                if (matrix[i][j]==1){
+                    ones++;
+                }
+               if (matrix[i][j]==2){
+                    twos++;
+                }
+                if (matrix[i][j]==3){
+                    threes++;
+                }
+                if (matrix[i][j]==4){
+                    fours++;
+                }
+                if (matrix[i][j]==5){
+                    fives++;
+                }
+                if (matrix[i][j]==6){
+                    sixs++;
+                }
+                if (matrix[i][j]==7){
+                    sevens++;
+                }
+                if (matrix[i][j]==8){
+                    eights++;
+                }
+                 if (matrix[i][j]==9){
+                    nines++;
+                }
+                
+                }
+                
+            }
+           
+           aList.add(zeros);
+           aList.add(ones);
+           aList.add(twos);aList.add(threes);aList.add(fours);aList.add(fives);aList.add(sixs);aList.add(sevens);aList.add(eights);
+        aList.add(nines);
+            
+            double d=0;
+            
+            double sumulita=0;
+            for(int z=0;z<aList.size();z++){
+                sumulita+=aList.get(z);
+                
+            }
+            double medie=sumulita/10;
+           
+            for(int k=0;k<aList.size();k++){
+                d=d + (Math.pow((aList.get(k)-medie),2));
+              
+            }
+            d=Math.sqrt(d/10);
+             
+            int count=0;
+            for(int x=0;x<aList.size();x++){
+                     
+                    if( (double)aList.get(x)>=d){
+                        count++;
+                    }
+                }
+            
+            System.out.println(count);
+        }
+        
+    }
